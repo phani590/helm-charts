@@ -4,6 +4,8 @@ metadata:
   name: keycloak-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: public
+    nginx.ingress.kubernetes.io/use-regex: 'true'
 spec:
   rules:
     - host: {{ .Values.ingress.host }}
